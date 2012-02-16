@@ -47,7 +47,7 @@ your site's output folder and should look something similar to this:
     | | | |- atom.xml
     | |- atom.xml
 
-The `feeds/atom.xml` will contain posts from all categories.
+The `feeds/atom.xml` file will contain posts from all categories.
 
 Contributing
 ------------
