@@ -49,7 +49,7 @@ module Jekyll
     # Creates our feed using the Atom library.
     def createFeed
       feed = Atom::Feed.new self.url
-      feed.id = @site.config['url']
+      feed.id = "#{@site.config['url']}/"
       feed.title = @site.config['name']
       feed.title = "#{feed.title} >> #{@category}" if @category
       feed.subtitle = @site.config['tagline'] if @site.config['tagline']
@@ -62,7 +62,7 @@ module Jekyll
 
       # Alternate link
       link_alt = feed.links.new
-      link_alt.href = URI.escape(@site.config['url'])
+      link_alt.href = "#{URI.escape(@site.config['url'])}/"
 
       # (Site) Author info
       if @site.config['author']
@@ -74,7 +74,7 @@ module Jekyll
       # Insert post entires
       @posts.each do |post|
         entry = feed.entries.new
-        entry.id = post.permalink
+        entry.id = "#{@site.config['url']}#{post.url}"
         entry.title = post.data['title']
         entry.updated = post.date
 
