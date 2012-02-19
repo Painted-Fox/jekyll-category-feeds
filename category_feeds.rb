@@ -100,7 +100,7 @@ module Jekyll
     priority :lowest
 
     def generate(site)
-      feed_dir = site.config['feed_dir'] || 'feeds'
+      feed_dir = site.config['feed_dir'] || 'feed'
 
       # Generate our feed for the whole site.
       site.static_files << FeedFile.new(

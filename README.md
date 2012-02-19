@@ -29,25 +29,25 @@ For feeds to be generated correctly, you'll need some options set in your site's
 * **tagline** - *optional* - Site tagline/subtitle.
 * **author** - *optional* - The site author.
 * **email** - *optional* - The site author's email.
-* **feed_dir** - *optional* - *(default: feeds)* - Directory in the output
+* **feed_dir** - *optional* - *(default: feed)* - Directory in the output
     folder where the generated feeds will be placed.
 
 When you run Jekyll feeds will be placed into your set `feed_dir` or the
-directory `feeds` if you haven't specified it in your configuration.
+directory `feed` if you haven't specified it in your configuration.
 
 As example, lets say you have two categories, **Art** for posts related to
 artwork and **Technology** for techy blog posts.  Your feeds will be placed in
 your site's output folder and should look something similar to this:
 
     |- _site/
-    | |- feeds/
+    | |- feed/
     | | |- Art/
     | | | |- atom.xml
     | | |- Technology/
     | | | |- atom.xml
     | |- atom.xml
 
-The `feeds/atom.xml` file will contain posts from all categories.
+The `feed/atom.xml` file will contain posts from all categories.
 
 Contributing
 ------------
