@@ -49,6 +49,22 @@ your site's output folder and should look something similar to this:
 
 The `feed/atom.xml` file will contain posts from all categories.
 
+### Liquid Tag
+
+In your site you may want to link to the feed associated with the category of
+your page.  A liquid tag is provided to do just this; just include `{%
+page_feed_url %}` in your page.  The url to the feed will match the category
+associated with your page.
+
+If you want to allow automatic discovery of your feeds, you can include this in
+your header.
+
+    <link rel="alternate" type="application/atom+xml" title="Atom feed" href="{% page_feed_url %}" />
+
+If your page has a category in it's url, such as `Art`, it will point to the
+feed for that category.  If we can't match a category in the url, the feed
+containing all posts is given.
+
 Contributing
 ------------
 

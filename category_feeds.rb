@@ -121,4 +121,32 @@ module Jekyll
       end
     end
   end
+
+  # Liquid Tag
+  class PageFeedUrl < Liquid::Tag
+    def render(context)
+      site = context.registers[:site]
+      page_url = context.environments.first["page"]["url"]
+      feed_dir = site.config['feed_dir'] || 'feed'
+
+      # Search for the page's category within the url.
+      category = nil
+      page_url.split('/').reverse_each do | path_part |
+        if site.site_payload['site']['categories'].has_key? path_part
+          category = path_part
+          break
+        end
+      end
+
+      if category
+        feed_url = URI.escape("/#{feed_dir}/#{category}/atom.xml")
+      else
+        feed_url = URI.escape("/#{feed_dir}/atom.xml")
+      end
+
+      feed_url
+    end
+  end
+
+  Liquid::Template.register_tag('page_feed_url', Jekyll::PageFeedUrl)
 end
