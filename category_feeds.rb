@@ -1,7 +1,7 @@
 # encoding: utf-8
 #
 # Jekyll category feeds.
-# https://github.com/MrWerewolf/jekyll-category-pagination
+# https://github.com/MrWerewolf/jekyll-category-feeds
 #
 # Copyright (c) 2012 Ryan Seto <mr.werewolf@gmail.com>
 # Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
