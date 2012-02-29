@@ -74,7 +74,7 @@ module Jekyll
       # Insert post entires
       @posts.each do |post|
         entry = feed.entries.new
-        entry.id = "#{@site.config['url']}#{post.url}"
+        entry.id = post.id
         entry.title = post.data['title']
         entry.updated = post.date
 
