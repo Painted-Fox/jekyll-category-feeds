@@ -79,7 +79,7 @@ module Jekyll
         entry.updated = post.date
 
         link_alt = entry.links.new
-        link_alt.href = URI.escape(post.url)
+        link_alt.href = @site.config['url'] + URI.escape(post.url)
 
         post.categories.each do |c|
           category = entry.categories.new
