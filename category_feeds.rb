@@ -10,6 +10,7 @@
 #
 require 'atom/feed'
 require 'uri'
+require 'nokogiri'
 
 module Jekyll
 
@@ -77,6 +78,7 @@ module Jekyll
         entry.id = post.id
         entry.title = post.data['title']
         entry.updated = post.date
+	entry.summary = Nokogiri::HTML(post.content).text[0..300]
 
         link_alt = entry.links.new
         link_alt.href = @site.config['url'] + URI.escape(post.url)
